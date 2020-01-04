@@ -1,0 +1,14 @@
+{
+  "version": 3,
+  "file": "bundle.css",
+  "sources": [
+    "../src/App.svelte",
+    "../src/Mbar.svelte"
+  ],
+  "sourcesContent": [
+    "<script>\n\n\timport Router from './Nav/Router.svelte'\n\tconsole.log( 'Router' )\n\n\timport Mbar from \"./Mbar.svelte\"\n\timport Fetch from \"./Fetch.svelte\"\n\tconst props = {\n\t\turl: 'http://s3.amazonaws.com/negrone/album.txt'\n\t}\t\n</script>\n\n<style>\n\th1 { color: purple; }\n\th2 { color: grey; }\n</style>\n\n<Mbar />\n\n<Fetch {...props} let:data>\n  <h2>Albums</h2>\n  <ul>\n    {#each data as link}\n      <li>{link.album}</li>\n    {/each}\n  </ul>\n</Fetch>\n\n<!--h1>Hello {name}!</h1-->\n<!--h2>count {$count}</h2>\n<h3>Gallery {$albums}</h3-->\n\n",
+    "<script>\n\tconsole.log(`hullo mBar`)\n</script>\n\n\n\n\n\n\n\n<style> \n    #mbar {\n        position: absolute;\n        top: 0;\n        left: 0;\n        width: 100%;\n    }\n    #mbar div {\n\t    list-style-type: none;\n\t    margin: 0;\n\t    padding: 0;\n\t    overflow: hidden;\n\t    position:relative;\n\t    z-index: 3;\n\t\tbackground-color: rgba( 230, 230, 230, 0.8 )\n    }\n    #mbar div a {\n\t    float: left;\n\t    font-family: Lato, Helvetica, sans-serif;\n\t\tfont-size: .75em;\n\t\tfont-weight: 700;\n\t    display: block;\n\t\topacity: .85;\t\n\t    color: rgb(88, 88, 88);\n\t\tbackground-color: transparent;\n\t    text-align: center;\n\t    padding: 6px 12px;\n\t    text-decoration: none;\n    }\n</style> \n\n\n<span id=\"mbar\">\n\t<div>\n      \t<a href='/'>Home</a>\n\t  \t<a href='/'>Chindwin</a>\n\t  \t<a href='/'>PNG</a>\n\t\t<a href='/'>Bhutan</a>\n    </div>\n</span>"
+  ],
+  "names": [],
+  "mappings": "AAcC,EAAE,cAAC,CAAC,AAAC,KAAK,CAAE,IAAI,AAAE,CAAC;ACHhB,KAAK,eAAC,CAAC,AACH,QAAQ,CAAE,QAAQ,CAClB,GAAG,CAAE,CAAC,CACN,IAAI,CAAE,CAAC,CACP,KAAK,CAAE,IAAI,AACf,CAAC,AACD,oBAAK,CAAC,GAAG,eAAC,CAAC,AACV,eAAe,CAAE,IAAI,CACrB,MAAM,CAAE,CAAC,CACT,OAAO,CAAE,CAAC,CACV,QAAQ,CAAE,MAAM,CAChB,SAAS,QAAQ,CACjB,OAAO,CAAE,CAAC,CACb,gBAAgB,CAAE,MAAM,GAAG,CAAC,CAAC,GAAG,CAAC,CAAC,GAAG,CAAC,CAAC,GAAG,EAAE;IAC1C,CAAC,AACD,oBAAK,CAAC,GAAG,CAAC,CAAC,eAAC,CAAC,AACZ,KAAK,CAAE,IAAI,CACX,WAAW,CAAE,IAAI,CAAC,CAAC,SAAS,CAAC,CAAC,UAAU,CAC3C,SAAS,CAAE,KAAK,CAChB,WAAW,CAAE,GAAG,CACb,OAAO,CAAE,KAAK,CACjB,OAAO,CAAE,GAAG,CACT,KAAK,CAAE,IAAI,EAAE,CAAC,CAAC,EAAE,CAAC,CAAC,EAAE,CAAC,CACzB,gBAAgB,CAAE,WAAW,CAC1B,UAAU,CAAE,MAAM,CAClB,OAAO,CAAE,GAAG,CAAC,IAAI,CACjB,eAAe,CAAE,IAAI,AACtB,CAAC"
+}
